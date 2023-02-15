@@ -1,10 +1,9 @@
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from bot_command import *
-import emoji
 
 
-app = ApplicationBuilder().token("6069726115:AAHc98c_2wpPLRxnS93C5CRwWo7u1zsF2vw").build()
+app = ApplicationBuilder().token("").build()
 print('Start')
 
 app.add_handler(CommandHandler("start", help_command))
