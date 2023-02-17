@@ -1,10 +1,11 @@
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import ContextTypes
 import datetime
 import emoji
+import DayToNewYear
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text(f'/hi\n/time\n/help\n/sum')
+    await update.message.reply_text(f'/hi\n/time\n/help\n/sum\n/D2NY')
 
 async def time_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(f'{datetime.datetime.now()}')
@@ -18,3 +19,6 @@ async def sum_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> Non
     a = int(items[1])
     b = int(items[2])
     await update.message.reply_text(a+b)
+
+async def dayToNewYear(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    await update.message.reply_text(f'{DayToNewYear.daysToNewYear()}')
